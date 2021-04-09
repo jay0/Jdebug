@@ -1,0 +1,65 @@
+Usage:	bsub  [-h][-v]
+	bsub  [-f sub_script]
+	bsub	[-I]
+		[-p][-pr]	//list job's nodename and spe_map
+		[-node_label]	//print node_name before every output line
+		[-q queue_name]
+		[-n num_mpes [-master | -allmaster | -multi_allmaster rank_list] | -N num_nodes]
+		[-np node_mpes]
+		[-nodempemap node_mpe_map](0x1-0x3f)
+		[-mpecg mpe_cgs]
+		[-cgsp spe_in_cg | -min_cgsp min_spe_in_cg | -rtp spe_rtp | -asy]
+		[-mpmd]
+		[-lowpower]
+		[-preempt]
+		[-nobind]
+		[-K]   //kill on bad exit
+		[-node nodelist]
+		[-linpack_node node_file]
+		[-exclu | -shared]
+		[-timelimit timlimit_str  //eg: 10-11:12:13(10days+11hours+12minutes+13seconds]
+		[-dependency type:jobid[:jobid][,type:jobid][:jobid]]]	//available type: after/afterok/afternotok/afterany
+		[-libio]
+		[-x env_str] //eg: -x LD_PRELOAD=/usr/local/lib/lwfs/liblwfs-booster.so
+		[-J jobname]
+		[-jobtype job_type] // available type: COMM / IO / COMP / MEM / MIX
+		[-i infile]
+		[-o outfile]
+		[-k ckpt-period-minutes]
+		[-cross]
+		[-spebusy]
+		[-midnode	nodenum_in_mid]
+		[-cabnode	nodenum_in_cab]
+		[-health	health_level] //0, best nodes; 1, best+normal nodes; 2 all nodes
+		[-a	ccc [-gs groupsize] |
+			mpi |
+			omp [-pt threads_in_process]]
+		[-perf | -perf_float | -preff perf_file]
+		[-akernel]
+		[-akernel_debug]
+		[-xmalloc]
+		[-crossmalloc]
+		[-flush_dcache]
+		[-swrunarg "arg1 arg2 ..."]	//this parameter will take to swrun
+		[-b]			//for swrun as -b 1
+		[-parse]		//for swrun as -p
+		[-PARSE <all | master | slave>]		//for swrun as -P
+		[-heartbeat]
+		[-m 		value]	//for swrun as -m value
+		[-share_size0	size]	//for swrun as -s size only on rank0
+		[-priv_size0	size]	//for swrun as -t size only on rank0
+		[-cross_size0	size]	//for swrun as -T size only on rank0
+		[-ro_size0	size]	//for swrun as -r size only on rank0
+		[-pe_stack0	size]	//for swrun as -S size only on rank0
+		[-host_stack0	size] 	//for swrun as -K size only on rank0
+		[-share_size	size]	//for swrun as -s size
+		[-priv_size	size]	//for swrun as -t size
+		[-cross_size	size]	//for swrun as -T size
+		[-ro_size	size]	//for swrun as -r size
+		[-pe_stack	size]	//for swrun as -S size
+		[-host_stack	size] 		//for swrun as -K size
+		[-cache_size	size] 		//for swrun as -c size, 0/32/128
+		[-ldm_share_mode	mode] 		//for swrun as -L, 0/1/2/4/5
+		[-ldm_share_size	size] 		//for swrun as -l size, 0,4,8,16,32,64,128
+		[-swrun	swrun_name]	//use customized swrun
+		[command	[argument...]]
