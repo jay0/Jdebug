@@ -1,0 +1,5 @@
+Users can utilize Jdebug to assist in finding abnormal threads of their computing applications. The steps are:
+
+1. Job submission. In the front-end machine, submit a computing application executing on the computing nodes with “bsub -I -n <process_number> <program_name> [<args>]” command and other desired configurations. After the job is successfully submitted, one can get the job id “jobid” of the job.
+
+2. The use of Jdebug. When the program is abnormal or the users are anxious about whether the program is executed normally, they can run Jdebug with “Jdebug <jobid>” command in the front-end machine to analyze the program and find the abnormal threads. And one can access detailed data obtained by the tool in the “.Jdebug_<jobid>_<time>.res” file on current directory for further analysis.
